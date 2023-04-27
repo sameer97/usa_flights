@@ -1,5 +1,5 @@
-Airline on-time Perfromance Analysis
+USA Flights Data Analysis's
 ====================================
 
-Have you ever been stuck in an airport because your flight was delayed or cancelled
-and wondered if you could have predicted it if you'd had more data? This is your chance to find out.
+Have you ever wondered why certain airlines or airports bag the most flights
+and was this the case from the start or is it a recent trend? This is your chance to find out.
