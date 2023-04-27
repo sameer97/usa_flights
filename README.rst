@@ -9,4 +9,5 @@ This project demonstrates followings skills:
 - Handling big data using PySpark
 - Leverage Databricks and its utilities for Analysis
 - Efficiently use Azure resources
-- Build a neat and tidy documentation for the project using Sphinx
+- Build documentation for the project using Sphinx
+- Deploy the Sphinx documentation to GitGub pages
