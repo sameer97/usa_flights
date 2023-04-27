@@ -21,7 +21,7 @@ Check out the :doc:`user_guide/data` section for more information on data, inclu
 
 .. note::
 
-   This project was done as part of self learning.
+   This project was done as part of self learning and its still under progress.
 
 The aim of the project is to provide a graphical summary of important features of the data set and answer
 some fascinating questions like:
