@@ -3,12 +3,16 @@
 Analysis
 ========
 
-Analysis Requirements:
+Dominant Airlines
+-----------------
 
-#. Dominant airports over last decade and all time
+.. figure:: ../images/airline_dashboard.png
+   :alt: Airline Dashboard
+   :align: center
 
-#. Dominant carriers over last decade and all time
+Dominant Airports
+-----------------
 
-#. Visualize the outputs to see periods of timeframe
-
-#. Create databricks dashboards to be shared
+.. figure:: ../images/airport_dashboard.png
+   :alt: Airport Dashboard
+   :align: center

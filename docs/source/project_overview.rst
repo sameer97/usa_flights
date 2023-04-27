@@ -82,10 +82,6 @@ Documentation has been moduled in the following sections
 
     |-- **User Guide**
 
-        |-- **Overview**: Purpose of the user guide. Recommended for any business user of the applications. Refer here: :ref:`user_overview`
-
         |-- **Data**: A table encapsulating the purpose of various datasets along with a blueprint. Refer here: :ref:`data`
 
-        |-- **Analysis**: Refer here: :ref:`analysis`
-
-        |-- **Reports**: Refer here: :ref:`reports`
+        |-- **Analysis**: Presents dashboards depicting dominant airlines and airports. Refer here: :ref:`analysis`
