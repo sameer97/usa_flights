@@ -22,7 +22,7 @@ sys.path.insert(0, LIB_PKG_PATH)
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Airline_Analysis"
+project = "USA Flight Data Analysis"
 copyright = "2023, Sameer"
 author = "Sameer"
 release = "0.1"

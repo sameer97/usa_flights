@@ -10,9 +10,9 @@ Overview
 Project Overview
 ================
 
-Have you ever been stuck in an airport because your flight was delayed or cancelled and
-wondered if you could have predicted it if you'd had more data?
-**Airline on-time Perfromance Analysis** is your chance to find out. It pulls data from the
+Have you ever wondered why certain airlines or airports bag the most flights
+and was this the case from the start or is it a recent trend?
+**USA Flight Data Analysis** is your chance to find out. It pulls data from the
 `Data Expo 2009 <http://stat-computing.org/dataexpo/2009/>`_ and offers a *simple* and
 *intuitive* analysis.
 
@@ -26,15 +26,9 @@ Check out the :doc:`user_guide/data` section for more information on data, inclu
 The aim of the project is to provide a graphical summary of important features of the data set and answer
 some fascinating questions like:
 
-* When is the best time of day/day of week/time of year to fly to minimise delays?
+* What are the most popular airlines in USA?
 
-* Do older planes suffer more delays?
-
-* How does the number of people flying between different locations change over time?
-
-* How well does weather predict plane delays?
-
-* Can you detect cascading failures as delays in one airport create delays in others? Are there critical links in the system?
+* What are the busiest airports in USA?
 
 Solution Arhitecture
 --------------------

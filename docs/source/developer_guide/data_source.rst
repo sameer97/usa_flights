@@ -6,9 +6,9 @@ Data Source
 +-------+-----------------------+-----------+------------------------------------------------------------------------------+
 | S.No. | Data                  | File Type | Source                                                                       |
 +=======+=======================+===========+==============================================================================+
-| 1     | Airline on time data  | CSV       | `ASA Statistical Computing Dataverse <https://doi.org/10.7910/DVN/HG7NV7>`_  |
+| 1     | Flight data           | CSV       | `ASA Statistical Computing Dataverse <https://doi.org/10.7910/DVN/HG7NV7>`_  |
 +-------+-----------------------+-----------+------------------------------------------------------------------------------+
-| 2     | Airline carrier data  | JSON      | `Git Hub <https://github.com/npow/airline-codes/blob/master/airlines.json>`_ |
+| 2     | Airline data          | JSON      | `Git Hub <https://github.com/npow/airline-codes/blob/master/airlines.json>`_ |
 +-------+-----------------------+-----------+------------------------------------------------------------------------------+
 | 3     | Airports detail       | JSON      | `Data Hub <https://datahub.io/core/airport-codes>`_                          |
 +-------+-----------------------+-----------+------------------------------------------------------------------------------+
