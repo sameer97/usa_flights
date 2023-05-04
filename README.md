@@ -10,4 +10,4 @@ This project demonstrates followings skills:
 - Leverage Databricks and its utilities for Analysis
 - Efficiently use Azure resources
 - Build documentation for the project using Sphinx
-- Deploy the Sphinx documentation to GitGub pages
+- Deploy the Sphinx documentation to GitHub pages
