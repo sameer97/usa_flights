@@ -1,0 +1,191 @@
+{
+	"name": "ingestion_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Latest Folder",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "ds_airline_raw",
+						"type": "DatasetReference",
+						"parameters": {
+							"flight_date": {
+								"value": "@pipeline().parameters.flight_date",
+								"type": "Expression"
+							}
+						}
+					},
+					"fieldList": [
+						"exists"
+					],
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			},
+			{
+				"name": "If Folder Exists",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Get Latest Folder",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@activity('Get Latest Folder').output.exists",
+						"type": "Expression"
+					},
+					"ifTrueActivities": [
+						{
+							"name": "Ingest Flight Data",
+							"type": "DatabricksNotebook",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebookPath": "/Repos/sksami1197@gmail.com/PySpark/ingestion/1.ingest_flights_file",
+								"baseParameters": {
+									"data_source": {
+										"value": "@variables('flight_source')",
+										"type": "Expression"
+									},
+									"flight_date": {
+										"value": "@formatDateTime(pipeline().parameters.flight_date, 'yyyy-MM-dd')",
+										"type": "Expression"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "ls_airlines_databricks_ws",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "Ingest Airport Data",
+							"type": "DatabricksNotebook",
+							"dependsOn": [
+								{
+									"activity": "Ingest Flight Data",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebookPath": "/Repos/sksami1197@gmail.com/PySpark/ingestion/2.ingest_airports_file",
+								"baseParameters": {
+									"data_source": {
+										"value": "@variables('airport_source')",
+										"type": "Expression"
+									},
+									"flight_date": {
+										"value": "@formatDateTime(pipeline().parameters.flight_date, 'yyyy-MM-dd')",
+										"type": "Expression"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "ls_airlines_databricks_ws",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "Ingest Airline Data",
+							"type": "DatabricksNotebook",
+							"dependsOn": [
+								{
+									"activity": "Ingest Airport Data",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebookPath": "/Repos/sksami1197@gmail.com/PySpark/ingestion/3.ingest_airlines_file",
+								"baseParameters": {
+									"data_source": {
+										"value": "@variables('airline_source')",
+										"type": "Expression"
+									},
+									"flight_date": {
+										"value": "@formatDateTime(pipeline().parameters.flight_date, 'yyyy-MM-dd')",
+										"type": "Expression"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "ls_airlines_databricks_ws",
+								"type": "LinkedServiceReference"
+							}
+						}
+					]
+				}
+			}
+		],
+		"concurrency": 1,
+		"parameters": {
+			"flight_date": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"flight_source": {
+				"type": "String",
+				"defaultValue": "ASA Dataverse"
+			},
+			"airline_source": {
+				"type": "String",
+				"defaultValue": "Git Hub"
+			},
+			"airport_source": {
+				"type": "String",
+				"defaultValue": "Data Hub"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-05-05T14:51:05Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

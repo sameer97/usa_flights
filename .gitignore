@@ -1,0 +1,26 @@
+.env
+.log
+.venv/
+mypython/
+*.pyc
+*.csv
+*.zip
+*.parquet
+*.xls
+*.xlsx
+*.out
+**/__pycache__/
+**ipynb_checkpoints**
+
+# ignore joblib files
+*.joblib
+
+# ignore log files
+**/logs/
+**/*.log
+
+.vscode/settings.json
+
+# Sphinx documentation
+docs/build/
+docs/source/_autosummary/
