@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Stack &mdash; USA Flight Data Analysis 0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Production Pipelines" href="prodction_pipelines.html" />
+    <link rel="prev" title="Data Source" href="data_source.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            USA Flight Data Analysis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../project_overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_source.html">Data Source</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tech Stack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#azure-databricks">Azure Databricks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azure-data-lake-service">Azure Data Lake Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyspark">PySpark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sql">SQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="prodction_pipelines.html">Production Pipelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">USA Flight Data Analysis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../developer_guide.html">Developer Guide</a></li>
+      <li class="breadcrumb-item active">Tech Stack</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/developer_guide/tech_stack.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tech-stack">
+<span id="id1"></span><h1>Tech Stack<a class="headerlink" href="#tech-stack" title="Permalink to this heading"></a></h1>
+<p>Following are the major technologies or tools used in this project:</p>
+<section id="azure-databricks">
+<span id="databricks"></span><h2>Azure Databricks<a class="headerlink" href="#azure-databricks" title="Permalink to this heading"></a></h2>
+<p>Databricks is a company created by the founders of Apache Spark,
+to make it easier to work with Spark by providing the necessary management layers.
+Microsoft makes, the Databricks service available on its Azure Cloud platform as a first party service.
+These three offerings together makes Azure Databricks. Azure Databricks leverages, Azure security and
+seamlessly integrates with Azure Active Directory and single sign on.
+It provides seamless integration and high speed connectors between various Azure data services.</p>
+<p>Databricks adds necessary layers on top of apache spark to make it easy for us to use the spark capabilities.</p>
+<p>More on it at <a class="reference external" href="https://learn.microsoft.com/en-us/azure/databricks/">azure databricks documentation</a></p>
+</section>
+<section id="azure-data-lake-service">
+<span id="azure"></span><h2>Azure Data Lake Service<a class="headerlink" href="#azure-data-lake-service" title="Permalink to this heading"></a></h2>
+<p>Azure Data Lake Service or ADLS is a scalable data storage and analytics service hosted in Azure.
+More on it at <a class="reference external" href="https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction">ADLS documentation</a></p>
+</section>
+<section id="pyspark">
+<span id="id2"></span><h2>PySpark<a class="headerlink" href="#pyspark" title="Permalink to this heading"></a></h2>
+<p>Apache Spark is a unified analytics engine for big data processing. Its faster that Hadoop because of its in-memory processing and other optimizations.</p>
+<p>High level Spark Architecture Components:</p>
+<ol class="arabic simple">
+<li><p>Spark Core: Contains basic functionalities like scheduling tasks, memory management, fault recovery. Home to sparks abstraction API Resilient Distributed Dataset (RDD)</p></li>
+<li><p>Spark SQL Engine: Converts a query to highly efficient execution plan and takes care of CPU efficiency</p></li>
+<li><p>Higher level API’s like Spark SQL, DataFrame, Spark streaming, etc.</p></li>
+<li><p>Spark comes with Standalone resource manager, but we can choose others like YARN, Kubernetes, etc</p></li>
+</ol>
+<p>PySpark is a python API for spark.</p>
+<p>More on it at <a class="reference external" href="https://hyukjin-spark.readthedocs.io/en/latest/">PySpark documentation</a></p>
+</section>
+<section id="sql">
+<span id="id3"></span><h2>SQL<a class="headerlink" href="#sql" title="Permalink to this heading"></a></h2>
+<p>Structured Query Language or SQL is a domain-specific language used in programming and designed
+for managing data held in a relational database management system, or for stream processing
+in a relational data stream management system</p>
+<p>More on it at <a class="reference external" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/?view=azuresql">azure sql documentation</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data_source.html" class="btn btn-neutral float-left" title="Data Source" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="prodction_pipelines.html" class="btn btn-neutral float-right" title="Production Pipelines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Sameer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
