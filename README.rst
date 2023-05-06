@@ -11,3 +11,4 @@ This project demonstrates followings skills:
 - Efficiently use Azure resources
 - Build documentation for the project using Sphinx
 - Deploy the Sphinx documentation to GitHub pages
+- Build and Deploy pipelines in Azure Data Factory 
